@@ -1,0 +1,39 @@
+body {
+    background-color: #ece5da;
+    text-align: center;
+}
+
+div {
+    width: 600px;
+    margin: 5em auto;
+    padding: 2em;
+    border-radius: 0.5em;
+    box-shadow: 2px 3px 7px 2px rgba(0,0,0,0.02);
+}
+
+h1 {
+    color: #202020;
+    text-transform: uppercase;
+    letter-spacing: -2px;
+    font-family: 'Paytone One', sans-serif;
+}
+
+h1 span {
+    display: block;
+    margin: 11px 0 17px 0;
+    font-size: 80px;
+    line-height: 80px;
+    color: #f1ebe5;
+    text-shadow: 0 13.36px 8.896px #c4b59d,0 -2px 1px #fff;
+    letter-spacing: -4px;
+}
+
+p {
+    font-family: 'Bad Script', cursive;
+}
+
+a:link, a:visited {
+    color: #38488f;
+    text-decoration: none;
+}
+

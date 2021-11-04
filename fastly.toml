@@ -1,0 +1,22 @@
+# This file describes a Fastly Compute@Edge package. To learn more visit:
+# https://developer.fastly.com/reference/fastly-toml/
+
+authors = ["hrmsk66@gmail.com"]
+description = "A basic starter kit that demonstrates routing, simple synthetic responses and overriding caching rules."
+language = "rust"
+manifest_version = 2
+name = "ecp-ab-test-demo"
+service_id = "5s9fmY2Ct3hcWAEW97Kjjc"
+
+[local_server]
+
+  [local_server.backends]
+
+    [local_server.backends.origin_0]
+      url = "https://example.com"
+
+  [local_server.dictionaries]
+
+    [local_server.dictionaries.ab_config]
+      file = "abtest.json"
+      format = "json"

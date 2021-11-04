@@ -1,0 +1,6 @@
+{
+   "tests":"itemcount, buttonsize, enrich",
+   "itemcount":"{\"buckets\":[\"10\",\"15\"],\"weight\":\"1:1\"}",
+   "buttonsize":"{\"buckets\":[\"small\",\"medium\",\"large\"],\"weight\":\"7:3:2\"}",
+   "enrich":"{\"buckets\":[\"A\",\"B\"],\"weight\":\"1:1\"}"
+}
