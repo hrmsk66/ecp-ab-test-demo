@@ -73,7 +73,7 @@ impl ClientID {
     fn as_setcookie(&self) -> String {
         format!(
             // "{}={}; max-age=31536000; path=/; httponly",
-            "{}={}; max-age=31536000; domain=edgecompute.app; path=/; secure; httponly",
+            "{}={}; Max-Age=31536000; Domain=edgecompute.app; Path=/; Secure; HttpOnly",
             CID_COOKIE,
             self.id
         )
