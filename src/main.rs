@@ -27,7 +27,7 @@ use uuid::Uuid;
 
 const BACKEND_NAME: &str = "origin_0";
 const DICT_NAME: &str = "ab_config";
-const COOKIE_NAME: &str = "ab_cid";
+const CID_COOKIE: &str = "ab_cid";
 
 #[derive(Debug, Deserialize)]
 struct ABTest {
@@ -72,9 +72,9 @@ impl ClientID {
     }
     fn as_setcookie(&self) -> String {
         format!(
-            "{}={}; max-age=31536000; path=/; httponly",
-            //            "{}={}; max-age=31536000; domain=edgecompute.app; path=/; secure; httponly",
-            COOKIE_NAME,
+            // "{}={}; max-age=31536000; path=/; httponly",
+            "{}={}; max-age=31536000; domain=edgecompute.app; path=/; secure; httponly",
+            CID_COOKIE,
             self.id
         )
     }
@@ -127,7 +127,7 @@ fn main(mut req: Request) -> Result<Response, Error> {
         let cid = match req.get_header("cookie") {
             Some(cookie) => {
                 let mut cookie_jar = load_cookie(cookie.to_str()?);
-                match cookie_jar.remove(COOKIE_NAME) {
+                match cookie_jar.remove(CID_COOKIE) {
                     Some(id) => {
                         req.set_header("cookie", stringify_cookie(cookie_jar));
                         ClientID::from_id(id)
