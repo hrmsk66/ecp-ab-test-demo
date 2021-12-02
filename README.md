@@ -24,4 +24,4 @@ This example assumes that test items are defined in the dictionary in the format
 }
 ```
 
-Deployed at ab.edgecompute.app for demo.
+Deployed at https://ab.edgecompute.app/ for demo.
